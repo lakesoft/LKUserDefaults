@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BC067592187F9E660096175E /* TestUserDefaults2.m in Sources */ = {isa = PBXBuildFile; fileRef = BC067590187F9E5B0096175E /* TestUserDefaults2.m */; };
+		BC067595187FA2100096175E /* LKKeyValueStore.m in Sources */ = {isa = PBXBuildFile; fileRef = BC067594187FA2100096175E /* LKKeyValueStore.m */; };
+		BC067596187FA2100096175E /* LKKeyValueStore.m in Sources */ = {isa = PBXBuildFile; fileRef = BC067594187FA2100096175E /* LKKeyValueStore.m */; };
+		BC06759C187FF7FA0096175E /* TestUserDefaultsSub.m in Sources */ = {isa = PBXBuildFile; fileRef = BC06759A187FF7FA0096175E /* TestUserDefaultsSub.m */; };
 		BCBC75F9187CFCC2001CA0CB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCBC75F8187CFCC2001CA0CB /* Foundation.framework */; };
 		BCBC75FB187CFCC2001CA0CB /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCBC75FA187CFCC2001CA0CB /* CoreGraphics.framework */; };
 		BCBC75FD187CFCC2001CA0CB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCBC75FC187CFCC2001CA0CB /* UIKit.framework */; };
@@ -21,6 +25,14 @@
 		BCBC761A187CFCC2001CA0CB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCBC75FC187CFCC2001CA0CB /* UIKit.framework */; };
 		BCBC7622187CFCC2001CA0CB /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = BCBC7620187CFCC2001CA0CB /* InfoPlist.strings */; };
 		BCBC7624187CFCC2001CA0CB /* LKUserDefaultsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BCBC7623187CFCC2001CA0CB /* LKUserDefaultsTests.m */; };
+		BCBC7630187CFE1A001CA0CB /* LKUserDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = BCBC762F187CFE1A001CA0CB /* LKUserDefaults.m */; };
+		BCBC7631187CFE20001CA0CB /* LKUserDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = BCBC762F187CFE1A001CA0CB /* LKUserDefaults.m */; };
+		BCBC7634187CFE36001CA0CB /* LKUserDefaultsProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = BCBC7633187CFE36001CA0CB /* LKUserDefaultsProxy.m */; };
+		BCBC7635187CFE36001CA0CB /* LKUserDefaultsProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = BCBC7633187CFE36001CA0CB /* LKUserDefaultsProxy.m */; };
+		BCBC7638187CFEA2001CA0CB /* LKPropertyHook.m in Sources */ = {isa = PBXBuildFile; fileRef = BCBC7637187CFEA2001CA0CB /* LKPropertyHook.m */; };
+		BCBC7639187CFEA2001CA0CB /* LKPropertyHook.m in Sources */ = {isa = PBXBuildFile; fileRef = BCBC7637187CFEA2001CA0CB /* LKPropertyHook.m */; };
+		BCBC763D187D0078001CA0CB /* TestUserDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = BCBC763B187D0078001CA0CB /* TestUserDefaults.m */; };
+		BCBC7640187D0339001CA0CB /* SampleDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = BCBC763F187D0339001CA0CB /* SampleDefaults.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +46,18 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		BC06758F187F9E5B0096175E /* TestUserDefaults2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestUserDefaults2.h; sourceTree = "<group>"; };
+		BC067590187F9E5B0096175E /* TestUserDefaults2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestUserDefaults2.m; sourceTree = "<group>"; };
+		BC067593187FA2100096175E /* LKKeyValueStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LKKeyValueStore.h; sourceTree = "<group>"; };
+		BC067594187FA2100096175E /* LKKeyValueStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LKKeyValueStore.m; sourceTree = "<group>"; };
+		BC067599187FF7FA0096175E /* TestUserDefaultsSub.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestUserDefaultsSub.h; sourceTree = "<group>"; };
+		BC06759A187FF7FA0096175E /* TestUserDefaultsSub.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestUserDefaultsSub.m; sourceTree = "<group>"; };
+		BC06759E187FFED80096175E /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		BC06759F187FFEE90096175E /* LKUserDefaults.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = LKUserDefaults.podspec; sourceTree = "<group>"; };
+		BC0675A0187FFEF90096175E /* README.md */ = {isa = PBXFileReference; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
+		BC0675A1187FFF050096175E /* Rakefile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Rakefile; sourceTree = "<group>"; };
+		BC0675A2187FFF130096175E /* CHANGELOG.md */ = {isa = PBXFileReference; lastKnownFileType = text; path = CHANGELOG.md; sourceTree = "<group>"; };
+		BC0675A5188000160096175E /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
 		BCBC75F5187CFCC2001CA0CB /* LKUserDefaults.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LKUserDefaults.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCBC75F8187CFCC2001CA0CB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		BCBC75FA187CFCC2001CA0CB /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -53,6 +77,16 @@
 		BCBC761F187CFCC2001CA0CB /* LKUserDefaultsTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "LKUserDefaultsTests-Info.plist"; sourceTree = "<group>"; };
 		BCBC7621187CFCC2001CA0CB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		BCBC7623187CFCC2001CA0CB /* LKUserDefaultsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LKUserDefaultsTests.m; sourceTree = "<group>"; };
+		BCBC762E187CFE1A001CA0CB /* LKUserDefaults.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LKUserDefaults.h; sourceTree = "<group>"; };
+		BCBC762F187CFE1A001CA0CB /* LKUserDefaults.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LKUserDefaults.m; sourceTree = "<group>"; };
+		BCBC7632187CFE36001CA0CB /* LKUserDefaultsProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LKUserDefaultsProxy.h; sourceTree = "<group>"; };
+		BCBC7633187CFE36001CA0CB /* LKUserDefaultsProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LKUserDefaultsProxy.m; sourceTree = "<group>"; };
+		BCBC7636187CFEA2001CA0CB /* LKPropertyHook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LKPropertyHook.h; sourceTree = "<group>"; };
+		BCBC7637187CFEA2001CA0CB /* LKPropertyHook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LKPropertyHook.m; sourceTree = "<group>"; };
+		BCBC763A187D0078001CA0CB /* TestUserDefaults.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestUserDefaults.h; sourceTree = "<group>"; };
+		BCBC763B187D0078001CA0CB /* TestUserDefaults.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestUserDefaults.m; sourceTree = "<group>"; };
+		BCBC763E187D0339001CA0CB /* SampleDefaults.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SampleDefaults.h; sourceTree = "<group>"; };
+		BCBC763F187D0339001CA0CB /* SampleDefaults.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SampleDefaults.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,10 +113,46 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BC067597187FA4D70096175E /* Base library */ = {
+			isa = PBXGroup;
+			children = (
+				BC067593187FA2100096175E /* LKKeyValueStore.h */,
+				BC067594187FA2100096175E /* LKKeyValueStore.m */,
+				BCBC7636187CFEA2001CA0CB /* LKPropertyHook.h */,
+				BCBC7637187CFEA2001CA0CB /* LKPropertyHook.m */,
+			);
+			name = "Base library";
+			sourceTree = "<group>";
+		};
+		BC067598187FA4E50096175E /* UserDefaults */ = {
+			isa = PBXGroup;
+			children = (
+				BCBC762E187CFE1A001CA0CB /* LKUserDefaults.h */,
+				BCBC762F187CFE1A001CA0CB /* LKUserDefaults.m */,
+				BCBC7632187CFE36001CA0CB /* LKUserDefaultsProxy.h */,
+				BCBC7633187CFE36001CA0CB /* LKUserDefaultsProxy.m */,
+			);
+			name = UserDefaults;
+			sourceTree = "<group>";
+		};
+		BC0675A3187FFF320096175E /* CocoaPods */ = {
+			isa = PBXGroup;
+			children = (
+				BC06759F187FFEE90096175E /* LKUserDefaults.podspec */,
+				BC0675A1187FFF050096175E /* Rakefile */,
+			);
+			name = CocoaPods;
+			sourceTree = "<group>";
+		};
 		BCBC75EC187CFCC2001CA0CB = {
 			isa = PBXGroup;
 			children = (
-				BCBC75FE187CFCC2001CA0CB /* LKUserDefaults */,
+				BC06759E187FFED80096175E /* LICENSE */,
+				BC0675A0187FFEF90096175E /* README.md */,
+				BC0675A2187FFF130096175E /* CHANGELOG.md */,
+				BC0675A3187FFF320096175E /* CocoaPods */,
+				BCBC762D187CFD4C001CA0CB /* Classes */,
+				BCBC75FE187CFCC2001CA0CB /* Examples */,
 				BCBC761D187CFCC2001CA0CB /* LKUserDefaultsTests */,
 				BCBC75F7187CFCC2001CA0CB /* Frameworks */,
 				BCBC75F6187CFCC2001CA0CB /* Products */,
@@ -109,7 +179,7 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		BCBC75FE187CFCC2001CA0CB /* LKUserDefaults */ = {
+		BCBC75FE187CFCC2001CA0CB /* Examples */ = {
 			isa = PBXGroup;
 			children = (
 				BCBC7607187CFCC2001CA0CB /* AppDelegate.h */,
@@ -117,10 +187,12 @@
 				BCBC760A187CFCC2001CA0CB /* Main.storyboard */,
 				BCBC760D187CFCC2001CA0CB /* ViewController.h */,
 				BCBC760E187CFCC2001CA0CB /* ViewController.m */,
+				BCBC763E187D0339001CA0CB /* SampleDefaults.h */,
+				BCBC763F187D0339001CA0CB /* SampleDefaults.m */,
 				BCBC7610187CFCC2001CA0CB /* Images.xcassets */,
 				BCBC75FF187CFCC2001CA0CB /* Supporting Files */,
 			);
-			path = LKUserDefaults;
+			path = Examples;
 			sourceTree = "<group>";
 		};
 		BCBC75FF187CFCC2001CA0CB /* Supporting Files */ = {
@@ -130,6 +202,7 @@
 				BCBC7601187CFCC2001CA0CB /* InfoPlist.strings */,
 				BCBC7604187CFCC2001CA0CB /* main.m */,
 				BCBC7606187CFCC2001CA0CB /* LKUserDefaults-Prefix.pch */,
+				BC0675A5188000160096175E /* Podfile */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -138,9 +211,16 @@
 			isa = PBXGroup;
 			children = (
 				BCBC7623187CFCC2001CA0CB /* LKUserDefaultsTests.m */,
+				BCBC763A187D0078001CA0CB /* TestUserDefaults.h */,
+				BCBC763B187D0078001CA0CB /* TestUserDefaults.m */,
+				BC06758F187F9E5B0096175E /* TestUserDefaults2.h */,
+				BC067590187F9E5B0096175E /* TestUserDefaults2.m */,
+				BC067599187FF7FA0096175E /* TestUserDefaultsSub.h */,
+				BC06759A187FF7FA0096175E /* TestUserDefaultsSub.m */,
 				BCBC761E187CFCC2001CA0CB /* Supporting Files */,
 			);
-			path = LKUserDefaultsTests;
+			name = LKUserDefaultsTests;
+			path = Tests;
 			sourceTree = "<group>";
 		};
 		BCBC761E187CFCC2001CA0CB /* Supporting Files */ = {
@@ -150,6 +230,15 @@
 				BCBC7620187CFCC2001CA0CB /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		BCBC762D187CFD4C001CA0CB /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				BC067597187FA4D70096175E /* Base library */,
+				BC067598187FA4E50096175E /* UserDefaults */,
+			);
+			path = Classes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -250,7 +339,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				BCBC760F187CFCC2001CA0CB /* ViewController.m in Sources */,
+				BCBC7630187CFE1A001CA0CB /* LKUserDefaults.m in Sources */,
+				BCBC7638187CFEA2001CA0CB /* LKPropertyHook.m in Sources */,
+				BCBC7634187CFE36001CA0CB /* LKUserDefaultsProxy.m in Sources */,
 				BCBC7609187CFCC2001CA0CB /* AppDelegate.m in Sources */,
+				BCBC7640187D0339001CA0CB /* SampleDefaults.m in Sources */,
+				BC067595187FA2100096175E /* LKKeyValueStore.m in Sources */,
 				BCBC7605187CFCC2001CA0CB /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -259,7 +353,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BCBC7639187CFEA2001CA0CB /* LKPropertyHook.m in Sources */,
+				BC06759C187FF7FA0096175E /* TestUserDefaultsSub.m in Sources */,
+				BC067592187F9E660096175E /* TestUserDefaults2.m in Sources */,
 				BCBC7624187CFCC2001CA0CB /* LKUserDefaultsTests.m in Sources */,
+				BCBC763D187D0078001CA0CB /* TestUserDefaults.m in Sources */,
+				BCBC7635187CFE36001CA0CB /* LKUserDefaultsProxy.m in Sources */,
+				BCBC7631187CFE20001CA0CB /* LKUserDefaults.m in Sources */,
+				BC067596187FA2100096175E /* LKKeyValueStore.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -379,8 +480,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "LKUserDefaults/LKUserDefaults-Prefix.pch";
-				INFOPLIST_FILE = "LKUserDefaults/LKUserDefaults-Info.plist";
+				GCC_PREFIX_HEADER = "Examples/LKUserDefaults-Prefix.pch";
+				INFOPLIST_FILE = "Examples/LKUserDefaults-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -392,8 +493,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "LKUserDefaults/LKUserDefaults-Prefix.pch";
-				INFOPLIST_FILE = "LKUserDefaults/LKUserDefaults-Info.plist";
+				GCC_PREFIX_HEADER = "Examples/LKUserDefaults-Prefix.pch";
+				INFOPLIST_FILE = "Examples/LKUserDefaults-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -410,12 +511,12 @@
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "LKUserDefaults/LKUserDefaults-Prefix.pch";
+				GCC_PREFIX_HEADER = "Tests/LKUserDefaults-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = "LKUserDefaultsTests/LKUserDefaultsTests-Info.plist";
+				INFOPLIST_FILE = "Tests/LKUserDefaultsTests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
@@ -433,8 +534,8 @@
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "LKUserDefaults/LKUserDefaults-Prefix.pch";
-				INFOPLIST_FILE = "LKUserDefaultsTests/LKUserDefaultsTests-Info.plist";
+				GCC_PREFIX_HEADER = "Tests/LKUserDefaults-Prefix.pch";
+				INFOPLIST_FILE = "Tests/LKUserDefaultsTests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
@@ -460,6 +561,7 @@
 				BCBC7629187CFCC2001CA0CB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		BCBC762A187CFCC2001CA0CB /* Build configuration list for PBXNativeTarget "LKUserDefaultsTests" */ = {
 			isa = XCConfigurationList;
@@ -468,6 +570,7 @@
 				BCBC762C187CFCC2001CA0CB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
