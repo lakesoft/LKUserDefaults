@@ -20,7 +20,7 @@ Step 2 : Access properties => done
         :
     NSString* name = defaults.name; // Read from NSUserDefaults for key "name"
 
-It is possible to register default values ( use -[NSUserDefaults registerDefaults] ).
+It is possible to register default values.
 
     - (void)registerDefaults
     {
@@ -34,6 +34,20 @@ It is possible to remove all values.
 
     [UserDefaults removeUserDefaults];
 
+Types:
+
+    @property (assign, nonatomic) BOOL boolValue;
+    @property (assign, nonatomic) NSInteger integerValue;
+    @property (assign, nonatomic) float floatValue;
+    @property (assign, nonatomic) double doubleValue;
+
+    @property (strong, nonatomic) NSString* stringValue;
+    @property (strong, nonatomic) NSArray* arrayValue;
+    @property (strong, nonatomic) NSArray* stringArrayValue;
+    @property (strong, nonatomic) NSDictionary* dictionaryValue;
+    @property (strong, nonatomic) NSData* dataValue;
+    @property (strong, nonatomic) NSURL* urlValue;
+    @property (strong, nonatomic) NSDate* dateValue;
 
 ## Notes
 
