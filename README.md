@@ -25,7 +25,7 @@ It is possible to register default values.
     - (void)registerDefaults
     {
         self.name = @"unkown";
-        self.name = @"unkown@xcatsan.com";
+        self.email = @"unkown@xcatsan.com";
     }
 
 These value will be used as default values when the values for keys are notfound in NSUserDefaults.

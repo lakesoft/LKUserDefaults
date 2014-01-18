@@ -238,7 +238,6 @@
             // getter
             key = selectorName;
             id ret = [self getPropertyValueForKey:key];
-            // 課題：NSURLの場合、retの型が NSDataになる
             [self _setReturnValue:ret invocation:invocation];
         }
     }
