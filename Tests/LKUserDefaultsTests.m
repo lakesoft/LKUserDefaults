@@ -7,9 +7,12 @@
 //
 
 #import <XCTest/XCTest.h>
+#import "LKUserDefaults.h"
 #import "TestUserDefaults.h"
 #import "TestUserDefaults2.h"
 #import "TestUserDefaultsSub.h"
+#import "TestUserDefaults3.h"
+
 #import <CommonCrypto/CommonCrypto.h>
 
 @interface LKUserDefaultsTests : XCTestCase
@@ -21,6 +24,7 @@
 - (void)setUp
 {
     [super setUp];
+    [LKUserDefaults removeUserDefaults];
 }
 
 - (void)tearDown
@@ -186,7 +190,6 @@
 - (void)testRegisterDefaults
 {
     TestUserDefaults* defaults = TestUserDefaults.sharedInstance;
-    [LKUserDefaults removeUserDefaults];
 
     XCTAssertEqualObjects(defaults.stringValue, @"Test string", @"");
     XCTAssertEqual(defaults.boolValue, YES, @"");
@@ -250,6 +253,26 @@
     XCTAssertEqualObjects(defaults.stringValueSub, stringValue, @"");
     XCTAssertEqualObjects(defaults.stringValueSub, [NSUserDefaults.standardUserDefaults stringForKey:@"stringValueSub"], @"");
     
+}
+
+- (void)testEmpty
+{
+    TestUserDefaults3* defaults = TestUserDefaults3.sharedInstance;
+
+    XCTAssertEqual(defaults.boolValue, NO, @"");
+    XCTAssertEqual(defaults.integerValue, 0, @"");
+    XCTAssertEqual(defaults.floatValue, 0.0f, @"");
+    XCTAssertEqual(defaults.doubleValue, 0.0, @"");
+
+    XCTAssertNil(defaults.stringValue, @"");
+    
+    XCTAssertNil(defaults.arrayValue, @"");
+    XCTAssertNil(defaults.stringArrayValue, @"");
+    XCTAssertNil(defaults.dictionaryValue, @"");
+    XCTAssertNil(defaults.dataValue, @"");
+    XCTAssertNil(defaults.urlValue, @"");
+    XCTAssertNil(defaults.dateValue, @"");
+
 }
 
 @end

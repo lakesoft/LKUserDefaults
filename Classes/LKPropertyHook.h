@@ -10,10 +10,17 @@
 
 @interface LKPropertyHook : NSProxy
 
+@property (strong, nonatomic, readonly) NSObject* target;
+
+#pragma mark - Basics
 - (instancetype)initWithTarget:(NSObject *)target;
+
+#pragma mark - API for subclass
+- (NSString*)classNameForKey:(NSString*)key;
 
 #pragma mark - Overwritten in subclass
 - (void)setPropertyValue:(id)value forKey:(NSString*)key;
 - (id)getPropertyValueForKey:(NSString*)key;
+
 
 @end

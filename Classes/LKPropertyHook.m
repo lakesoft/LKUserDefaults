@@ -6,6 +6,7 @@
 //  Copyright (c) 2014年 lakesoft. All rights reserved.
 //
 
+#import <objc/runtime.h>
 #import "LKPropertyHook.h"
 
 @interface LKPropertyHook()
@@ -13,12 +14,15 @@
 @end
 
 @implementation LKPropertyHook
+
+#pragma mark - Basics
 - (instancetype)initWithTarget:(NSObject *)target
 {
     self.target = target;
     return target ? self : nil;
 }
 
+#pragma mark - Privates
 - (id)_getArgumentAtIndex:(NSInteger)index invocation:(NSInvocation*)invocation
 {
     const char* valueType = [invocation.methodSignature getArgumentTypeAtIndex:index];
@@ -213,6 +217,7 @@
     }
 }
 
+#pragma mark - NSProxy
 - (void)forwardInvocation:(NSInvocation *)invocation
 {
     if (self.target) {
@@ -242,6 +247,28 @@
 - (NSMethodSignature*)methodSignatureForSelector:(SEL)sel
 {
     return self.target ? [self.target methodSignatureForSelector:sel] : [super methodSignatureForSelector:sel];
+}
+
+
+#pragma mark - Overwritten in subclass
+- (NSString*)classNameForKey:(NSString*)key
+{
+    // ex) T@"NSString",&,N,V_stringValue
+    //   -> objc_property_attribute_t
+    //     key=T, value=@"NSString"
+    //     key=&, value=
+    //     key=N, value=
+    //     key=V, value=_stringValue
+    
+    NSString* className = nil;
+    
+    objc_property_t property = class_getProperty(self.target.class, key.UTF8String);
+    const char* value = property_copyAttributeValue(property, "T");
+    if (value && value[0] == '@') {
+        NSString* valueString = [NSString stringWithUTF8String:&value[1]];
+        className = [valueString stringByReplacingOccurrencesOfString:@"\"" withString:@""];
+    }
+    return className;
 }
 
 

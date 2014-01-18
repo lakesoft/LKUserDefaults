@@ -11,6 +11,7 @@
 		BC067595187FA2100096175E /* LKKeyValueStore.m in Sources */ = {isa = PBXBuildFile; fileRef = BC067594187FA2100096175E /* LKKeyValueStore.m */; };
 		BC067596187FA2100096175E /* LKKeyValueStore.m in Sources */ = {isa = PBXBuildFile; fileRef = BC067594187FA2100096175E /* LKKeyValueStore.m */; };
 		BC06759C187FF7FA0096175E /* TestUserDefaultsSub.m in Sources */ = {isa = PBXBuildFile; fileRef = BC06759A187FF7FA0096175E /* TestUserDefaultsSub.m */; };
+		BC0755A7188A838000ABA245 /* TestUserDefaults3.m in Sources */ = {isa = PBXBuildFile; fileRef = BC0755A5188A832E00ABA245 /* TestUserDefaults3.m */; };
 		BCBC75F9187CFCC2001CA0CB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCBC75F8187CFCC2001CA0CB /* Foundation.framework */; };
 		BCBC75FB187CFCC2001CA0CB /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCBC75FA187CFCC2001CA0CB /* CoreGraphics.framework */; };
 		BCBC75FD187CFCC2001CA0CB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCBC75FC187CFCC2001CA0CB /* UIKit.framework */; };
@@ -58,6 +59,8 @@
 		BC0675A1187FFF050096175E /* Rakefile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Rakefile; sourceTree = "<group>"; };
 		BC0675A2187FFF130096175E /* CHANGELOG.md */ = {isa = PBXFileReference; lastKnownFileType = text; path = CHANGELOG.md; sourceTree = "<group>"; };
 		BC0675A5188000160096175E /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
+		BC0755A4188A832E00ABA245 /* TestUserDefaults3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestUserDefaults3.h; sourceTree = "<group>"; };
+		BC0755A5188A832E00ABA245 /* TestUserDefaults3.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestUserDefaults3.m; sourceTree = "<group>"; };
 		BCBC75F5187CFCC2001CA0CB /* LKUserDefaults.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LKUserDefaults.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCBC75F8187CFCC2001CA0CB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		BCBC75FA187CFCC2001CA0CB /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -215,6 +218,8 @@
 				BCBC763B187D0078001CA0CB /* TestUserDefaults.m */,
 				BC06758F187F9E5B0096175E /* TestUserDefaults2.h */,
 				BC067590187F9E5B0096175E /* TestUserDefaults2.m */,
+				BC0755A4188A832E00ABA245 /* TestUserDefaults3.h */,
+				BC0755A5188A832E00ABA245 /* TestUserDefaults3.m */,
 				BC067599187FF7FA0096175E /* TestUserDefaultsSub.h */,
 				BC06759A187FF7FA0096175E /* TestUserDefaultsSub.m */,
 				BCBC761E187CFCC2001CA0CB /* Supporting Files */,
@@ -357,6 +362,7 @@
 				BC06759C187FF7FA0096175E /* TestUserDefaultsSub.m in Sources */,
 				BC067592187F9E660096175E /* TestUserDefaults2.m in Sources */,
 				BCBC7624187CFCC2001CA0CB /* LKUserDefaultsTests.m in Sources */,
+				BC0755A7188A838000ABA245 /* TestUserDefaults3.m in Sources */,
 				BCBC763D187D0078001CA0CB /* TestUserDefaults.m in Sources */,
 				BCBC7635187CFE36001CA0CB /* LKUserDefaultsProxy.m in Sources */,
 				BCBC7631187CFE20001CA0CB /* LKUserDefaults.m in Sources */,

@@ -5,7 +5,6 @@
 //  Created by Hiroshi Hashiguchi on 2014/01/08.
 //  Copyright (c) 2014年 lakesoft. All rights reserved.
 //
-
 #import "LKUserDefaultsProxy.h"
 #import "LKUserDefaults.h"
 
@@ -14,6 +13,7 @@
 @end
 
 @implementation LKUserDefaultsProxy
+
 
 #pragma mark - API
 - (id)initWithUserDefaults:(LKUserDefaults*)userDefaults
@@ -39,24 +39,18 @@
 
 - (id)getPropertyValueForKey:(NSString*)key
 {
-    id ret = [NSUserDefaults.standardUserDefaults objectForKey:key];
+    NSString* className = [self classNameForKey:key];
+    id ret = nil;
 
+    if ([className isEqualToString:@"NSURL"]) {
+        ret = [NSUserDefaults.standardUserDefaults URLForKey:key];
+    } else {
+        ret = [NSUserDefaults.standardUserDefaults objectForKey:key];
+    }
     if (ret == nil) {
-        return [self.registerDefaults valueForKey:key];
+        ret = [self.registerDefaults valueForKey:key];
     }
 
-    if ([ret isKindOfClass:NSData.class]) {
-        @try {
-            id ret2 = [NSUserDefaults.standardUserDefaults URLForKey:key];
-            if (ret2) {
-                ret = ret2;
-            }
-        }
-        @catch (NSException *exception) {
-        }
-        @finally {
-        }
-    }
     return ret;
 }
 
