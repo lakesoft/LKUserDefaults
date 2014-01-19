@@ -1,8 +1,5 @@
 # LKUserDefaults
 
-[![Version](http://cocoapod-badges.herokuapp.com/v/LKUserDefaults/badge.png)](http://cocoadocs.org/docsets/LKUserDefaults)
-[![Platform](http://cocoapod-badges.herokuapp.com/p/LKUserDefaults/badge.png)](http://cocoadocs.org/docsets/LKUserDefaults)
-
 ## Usage
 Step 1 : Define subclass of LKUserDefaults
 
@@ -58,7 +55,7 @@ Types:
 LKUserDefaults is available through [CocoaPods](http://cocoapods.org), to install
 it simply add the following line to your Podfile:
 
-    pod "LKUserDefaults"
+    pod "LKUserDefaults", :git => 'https://github.com/lakesoft/LKUserDefaults.git'
 
 ## Author
 
