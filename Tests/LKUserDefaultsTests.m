@@ -222,6 +222,39 @@
     
 }
 
+- (void)testRegisterDefaults2
+{
+    TestUserDefaults* defaults = TestUserDefaults.sharedInstance;
+    
+    XCTAssertEqual(defaults.registeredDefaults.boolValue, YES, @"");
+    XCTAssertEqual(defaults.registeredDefaults.boolValue, YES, @"");
+    XCTAssertEqual(defaults.registeredDefaults.integerValue, 100, @"");
+    XCTAssertEqual(defaults.registeredDefaults.floatValue, 200.0f, @"");
+    XCTAssertEqual(defaults.registeredDefaults.doubleValue, 300.0, @"");
+
+    NSArray* arrayValue = defaults.registeredDefaults.arrayValue;
+    XCTAssertEqual(arrayValue[0], @(1), @"");
+    XCTAssertEqual(arrayValue[1], @(2), @"");
+    XCTAssertEqual(arrayValue[2], @(3), @"");
+    
+    NSArray* stringArrayValue = defaults.registeredDefaults.stringArrayValue;
+    XCTAssertEqualObjects(stringArrayValue[0], @"A", @"");
+    XCTAssertEqualObjects(stringArrayValue[1], @"B", @"");
+    XCTAssertEqualObjects(stringArrayValue[2], @"C", @"");
+    
+    NSDictionary* dictionaryValue = defaults.registeredDefaults.dictionaryValue;
+    XCTAssertEqualObjects(dictionaryValue[@"KEY1"], @"VALUE1", @"");
+    XCTAssertEqualObjects(dictionaryValue[@"KEY2"], @"VALUE2", @"");
+    XCTAssertEqualObjects(dictionaryValue[@"KEY3"], @"VALUE3", @"");
+    
+    NSString* md5String1 = [self MD5StringWithData:defaults.registeredDefaults.dataValue];
+    NSString* md5String2 = [self MD5StringWithData:defaults.registeredDefaults.sampleData];
+    XCTAssertEqualObjects(md5String1, md5String2, @"");
+    
+    NSURL* urlValue = [NSURL URLWithString:@"http://xcatsan.com/hello?a=1&b=1"];
+    XCTAssertEqualObjects(defaults.registeredDefaults.urlValue, urlValue, @"");
+    XCTAssertEqualObjects(defaults.registeredDefaults.dateValue, [NSDate dateWithTimeIntervalSince1970:0], @"");
+}
 
 - (void)testUserDefaults2
 {

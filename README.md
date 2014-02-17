@@ -27,7 +27,13 @@ It is possible to register default values.
 
 These value will be used as default values when the values for keys are notfound in NSUserDefaults.
 
-It is possible to remove all values.
+These value can be retrieved via 'registeredDeafults' property.
+
+    NSString* initName = defaults.registeredDefaults.name;
+    NSString* initEmail = defaults.registeredDefaults.email;
+
+
+It is possible to remove all values (remove user defauls file).
 
     [UserDefaults removeUserDefaults];
 

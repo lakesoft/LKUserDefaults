@@ -10,7 +10,9 @@
 
 @interface LKUserDefaults : LKKeyValueStore
 
-#pragma mark - API (Should be overwritten in subclass)
-- (void)registerDefaults;
+
+#pragma mark - API
+- (void)registerDefaults;               // Should be overwritten in subclass
+- (instancetype)registeredDefaults;     // Get registerDefaults's values
 
 @end

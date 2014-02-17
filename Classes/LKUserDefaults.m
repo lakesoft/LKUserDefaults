@@ -9,6 +9,10 @@
 #import "LKUserDefaults.h"
 #import "LKUserDefaultsProxy.h"
 
+@interface LKUserDefaults()
+@property (weak, nonatomic) LKUserDefaults* registeredDefaults;
+@end
+
 @implementation LKUserDefaults
 
 + (void)removeUserDefaults
@@ -22,6 +26,7 @@
 + (id)proxyInstance
 {
     LKUserDefaults* defaults = self.new;
+    defaults.registeredDefaults = defaults;
     [defaults registerDefaults];
     return [[LKUserDefaultsProxy alloc] initWithUserDefaults:defaults];
 
