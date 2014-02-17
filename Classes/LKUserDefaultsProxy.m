@@ -9,7 +9,7 @@
 #import "LKUserDefaults.h"
 
 @interface LKUserDefaultsProxy()
-@property (weak, nonatomic) LKUserDefaults* registerDefaults;
+@property (weak, nonatomic) LKUserDefaults* userDefaults;
 @end
 
 @implementation LKUserDefaultsProxy
@@ -20,7 +20,7 @@
 {
     self = [super initWithTarget:userDefaults];
     if (self) {
-        self.registerDefaults = userDefaults;
+        self.userDefaults = userDefaults;
     }
     return self;
 }
@@ -48,7 +48,7 @@
         ret = [NSUserDefaults.standardUserDefaults objectForKey:key];
     }
     if (ret == nil) {
-        ret = [self.registerDefaults valueForKey:key];
+        ret = [self.userDefaults valueForKey:key];
     }
 
     return ret;
