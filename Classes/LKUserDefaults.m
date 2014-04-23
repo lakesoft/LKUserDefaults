@@ -38,4 +38,9 @@
     // do nothing
 }
 
+- (NSString *)keyPrefix
+{
+    return nil;
+}
+
 @end

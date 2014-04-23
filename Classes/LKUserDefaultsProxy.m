@@ -29,6 +29,8 @@
 #pragma mark - Overwritten in subclass
 - (void)setPropertyValue:(id)value forKey:(NSString*)key
 {
+    key = [self storeKeyForKey:key];
+
     if ([value isKindOfClass:NSURL.class]) {
         [NSUserDefaults.standardUserDefaults setURL:value forKey:key];
     } else {
@@ -42,6 +44,8 @@
     NSString* className = [self classNameForKey:key];
     id ret = nil;
 
+    key = [self storeKeyForKey:key];
+
     if ([className isEqualToString:@"NSURL"]) {
         ret = [NSUserDefaults.standardUserDefaults URLForKey:key];
     } else {
@@ -54,5 +58,14 @@
     return ret;
 }
 
+- (NSString *)storeKeyForKey:(NSString *)key {
+    NSString *ret = key;
+
+    if (self.userDefaults.keyPrefix) {
+        ret = [NSString stringWithFormat:@"%@%@", self.userDefaults.keyPrefix, key];
+    }
+
+    return ret;
+}
 
 @end
