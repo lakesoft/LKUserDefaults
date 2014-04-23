@@ -15,5 +15,6 @@
 - (void)registerDefaults;               // Should be overwritten in subclass
 - (instancetype)registeredDefaults;     // Get registerDefaults's values
 - (NSString *)keyPrefix;
+- (NSDictionary *)keyMaps;
 
 @end

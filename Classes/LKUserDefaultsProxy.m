@@ -59,13 +59,16 @@
 }
 
 - (NSString *)storeKeyForKey:(NSString *)key {
-    NSString *ret = key;
 
-    if (self.userDefaults.keyPrefix) {
-        ret = [NSString stringWithFormat:@"%@%@", self.userDefaults.keyPrefix, key];
+    if (self.userDefaults.keyMaps && self.userDefaults.keyMaps[key]) {
+        key = self.userDefaults.keyMaps[key];
     }
 
-    return ret;
+    if (self.userDefaults.keyPrefix) {
+        key = [NSString stringWithFormat:@"%@%@", self.userDefaults.keyPrefix, key];
+    }
+
+    return key;
 }
 
 @end
