@@ -226,13 +226,19 @@
         NSString* selectorName = NSStringFromSelector(invocation.selector);
         NSString* key = nil;
         
-        if (invocation.methodSignature.numberOfArguments > 2) {
+        if (invocation.methodSignature.numberOfArguments > 3) {
+            [invocation invoke];
+        } else if (invocation.methodSignature.numberOfArguments == 3) {
             // setter
             // "set" + <Key> + ":"
-            key = [selectorName substringWithRange:NSMakeRange(3, selectorName.length-(3+1))];
-            key = [[key substringToIndex:1].lowercaseString stringByAppendingString:[key substringFromIndex:1]];
-            id value = [self _getArgumentAtIndex:2 invocation:invocation];
-            [self setPropertyValue:value forKey:key];
+            if ([[selectorName substringToIndex:3] isEqualToString:@"set"]) {
+                key = [selectorName substringWithRange:NSMakeRange(3, selectorName.length-(3+1))];
+                key = [[key substringToIndex:1].lowercaseString stringByAppendingString:[key substringFromIndex:1]];
+                id value = [self _getArgumentAtIndex:2 invocation:invocation];
+                [self setPropertyValue:value forKey:key];
+            } else {
+                [invocation invoke];
+            }
             
         } else {
             // getter
