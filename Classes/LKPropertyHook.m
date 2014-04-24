@@ -11,6 +11,7 @@
 
 @interface LKPropertyHook()
 @property (strong, nonatomic) NSObject* target;
+@property (strong, nonatomic) NSArray* propertyNames;
 @end
 
 @implementation LKPropertyHook
@@ -19,6 +20,17 @@
 - (instancetype)initWithTarget:(NSObject *)target
 {
     self.target = target;
+
+    NSMutableArray *propertyNames = @[].mutableCopy;
+
+    unsigned int outCount;
+    objc_property_t *properties = class_copyPropertyList([self.target class], &outCount);
+    for (int i = 0; i < outCount; i++) {
+        objc_property_t property = properties[i];
+        [propertyNames addObject: [NSString stringWithUTF8String:property_getName(property)]];
+    }
+    self.propertyNames = propertyNames.copy;
+
     return target ? self : nil;
 }
 
@@ -226,19 +238,33 @@
         NSString* selectorName = NSStringFromSelector(invocation.selector);
         NSString* key = nil;
         
-        if (invocation.methodSignature.numberOfArguments > 2) {
+        if (invocation.methodSignature.numberOfArguments > 3) {
+            [invocation invoke];
+        } else if (invocation.methodSignature.numberOfArguments == 3) {
             // setter
             // "set" + <Key> + ":"
-            key = [selectorName substringWithRange:NSMakeRange(3, selectorName.length-(3+1))];
-            key = [[key substringToIndex:1].lowercaseString stringByAppendingString:[key substringFromIndex:1]];
-            id value = [self _getArgumentAtIndex:2 invocation:invocation];
-            [self setPropertyValue:value forKey:key];
+            if ([[selectorName substringToIndex:3] isEqualToString:@"set"]) {
+                key = [selectorName substringWithRange:NSMakeRange(3, selectorName.length-(3+1))];
+                key = [[key substringToIndex:1].lowercaseString stringByAppendingString:[key substringFromIndex:1]];
+                if ([self.propertyNames containsObject:key]) {
+                    id value = [self _getArgumentAtIndex:2 invocation:invocation];
+                    [self setPropertyValue:value forKey:key];
+                } else {
+                    [invocation invoke];
+                }
+            } else {
+                [invocation invoke];
+            }
             
         } else {
             // getter
             key = selectorName;
-            id ret = [self getPropertyValueForKey:key];
-            [self _setReturnValue:ret invocation:invocation];
+            if ([self.propertyNames containsObject:key]) {
+                id ret = [self getPropertyValueForKey:key];
+                [self _setReturnValue:ret invocation:invocation];
+            } else {
+                [invocation invoke];
+            }
         }
     }
 }
@@ -249,7 +275,6 @@
 }
 
 
-#pragma mark - Overwritten in subclass
 - (NSString*)classNameForKey:(NSString*)key
 {
     // ex) T@"NSString",&,N,V_stringValue
@@ -269,7 +294,6 @@
     }
     return className;
 }
-
 
 #pragma mark - Overwritten in subclass
 - (void)setPropertyValue:(id)value forKey:(NSString*)key
