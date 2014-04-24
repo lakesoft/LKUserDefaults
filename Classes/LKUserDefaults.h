@@ -14,7 +14,7 @@
 #pragma mark - API
 - (void)registerDefaults;               // Should be overwritten in subclass
 - (instancetype)registeredDefaults;     // Get registerDefaults's values
-- (NSString *)keyPrefix;
-- (NSDictionary *)keyMaps;
+- (NSString *)storeKeyPrefix;
+- (NSDictionary *)storeKeyMaps;
 
 @end

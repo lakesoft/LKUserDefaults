@@ -29,12 +29,12 @@
 #pragma mark - Overwritten in subclass
 - (void)setPropertyValue:(id)value forKey:(NSString*)key
 {
-    key = [self storeKeyForKey:key];
+    NSString *storeKey = [self storeKeyForKey:key];
 
     if ([value isKindOfClass:NSURL.class]) {
-        [NSUserDefaults.standardUserDefaults setURL:value forKey:key];
+        [NSUserDefaults.standardUserDefaults setURL:value forKey:storeKey];
     } else {
-        [NSUserDefaults.standardUserDefaults setObject:value forKey:key];
+        [NSUserDefaults.standardUserDefaults setObject:value forKey:storeKey];
     }
     [NSUserDefaults.standardUserDefaults synchronize];
 }
@@ -42,14 +42,14 @@
 - (id)getPropertyValueForKey:(NSString*)key
 {
     NSString* className = [self classNameForKey:key];
+    NSString *storeKey = [self storeKeyForKey:key];
+
     id ret = nil;
 
-    key = [self storeKeyForKey:key];
-
     if ([className isEqualToString:@"NSURL"]) {
-        ret = [NSUserDefaults.standardUserDefaults URLForKey:key];
+        ret = [NSUserDefaults.standardUserDefaults URLForKey:storeKey];
     } else {
-        ret = [NSUserDefaults.standardUserDefaults objectForKey:key];
+        ret = [NSUserDefaults.standardUserDefaults objectForKey:storeKey];
     }
     if (ret == nil) {
         ret = [self.userDefaults valueForKey:key];
@@ -60,12 +60,12 @@
 
 - (NSString *)storeKeyForKey:(NSString *)key {
 
-    if (self.userDefaults.keyMaps && self.userDefaults.keyMaps[key]) {
-        key = self.userDefaults.keyMaps[key];
+    if (self.userDefaults.storeKeyMaps && self.userDefaults.storeKeyMaps[key]) {
+        key = self.userDefaults.storeKeyMaps[key];
     }
 
-    if (self.userDefaults.keyPrefix) {
-        key = [NSString stringWithFormat:@"%@%@", self.userDefaults.keyPrefix, key];
+    if (self.userDefaults.storeKeyPrefix) {
+        key = [NSString stringWithFormat:@"%@%@", self.userDefaults.storeKeyPrefix, key];
     }
 
     return key;

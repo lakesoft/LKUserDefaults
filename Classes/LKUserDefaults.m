@@ -38,12 +38,12 @@
     // do nothing
 }
 
-- (NSString *)keyPrefix
+- (NSString *)storeKeyPrefix
 {
     return nil;
 }
 
-- (NSDictionary *)keyMaps {
+- (NSDictionary *)storeKeyMaps {
     return nil;
 }
 
